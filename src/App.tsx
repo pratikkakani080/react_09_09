@@ -1,21 +1,17 @@
+import { BrowserRouter } from "react-router";
 import "./App.css";
-import About from "./components/about";
-import Button from "./components/button";
 import Footer from "./components/footer";
 import Header from "./components/header";
+import Routing from "./components/routing";
 
 function App() {
   return (
     <>
-      <Header />
-      <div>
-        <About />
-        {/* <Button buttonName={"Confirm"} bgColor={"Green"} />
-        <Button bgColor={"Magenta"} />
-        <Button buttonName={"Submit"} bgColor={"Blue"} />
-        <Button buttonName={"Cancel"} /> */}
-      </div>
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <Routing />
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
