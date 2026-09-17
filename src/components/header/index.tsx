@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router'
 
 function Header() {
   return (
     <div>
-      <a href='/'>home</a>
-      <a href='/about'>about</a>
-      <a href='/products'>product</a>
-      <a href='/cart'>cart</a>
-      <a href='/contact'>contact</a>
+      <Link to='/'>home</Link>
+      <Link to='/about'>about</Link>
+      <Link to='/products'>product</Link>
+      <Link to='/cart'>cart</Link>
+      <Link to='/contact'>contact</Link>
     </div>
   )
 }
