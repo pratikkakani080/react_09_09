@@ -13,4 +13,12 @@ Hooks - basic functionalities
         - hooks should not be called in infinite loops
         - do not define hooks inside one another
 
+React Hooks
+useState - temporary data storage
+
+LifeCycle of a component
+Mounting
+Updating
+Unmounting
+
 render - to show something on DOM (Document object modal)

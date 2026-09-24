@@ -2,7 +2,6 @@ import React from "react";
 
 function Button(props) {
   const { bgColor, buttonName, onButtonClick } = props;
-  console.log("🚀 ~ Button ~ props:", props);
   return (
     <button
       style={{
