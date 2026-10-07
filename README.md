@@ -15,6 +15,7 @@ Hooks - basic functionalities
 
 React Hooks
 useState - temporary data storage
+useEffect - to handle side effects
 
 LifeCycle of a component
 Mounting
