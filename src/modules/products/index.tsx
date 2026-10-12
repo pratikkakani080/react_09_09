@@ -1,45 +1,51 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
 function Products() {
-    const products = [
-        {
-            id: 1,
-            title: 'iphone 18 pro max',
-            price: '1,75,000',
-            discountedPrice: '1,74,999',
-            img: 'https://th.bing.com/th?id=OIF.KuBDBUOihK3ohd6LHH%2b%2fTw&r=0&rs=1&pid=ImgDetMain&o=7&rm=3'
-        },
-        {
-            id: 2,
-            title: 'iphone 18 pro',
-            price: '1,50,000'
-        },
-        {
-            id: 3,
-            title: 'samsung galaxy s25',
-            price: '60,000'
-        },
-        {
-            id: 3,
-            title: 'samsung galaxy s25',
-            price: '60,000'
-        },
-    ]
+  useEffect(() => {
+    fetch("https://dummyjson.com/products", {
+      method: "POST",
+      body: JSON.stringify({ title: "laptop" }),
+    });
+  }, []);
+
+  const getPosts = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts");
+  };
+
+  const createPost = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      body: JSON.stringify({
+        title: "foo",
+        body: "bar",
+        userId: 1,
+      }),
+    });
+  };
+
+  const updatePost = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      method: "PATCH", // PUT
+      body: JSON.stringify({
+        title: "foo",
+      }),
+    });
+  };
+
+  const deletePost = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      method: "DELETE",
+    });
+  };
+
   return (
-    <div>
-      {products.map((el, i, ar) => {
-        return (
-            <div>
-                <span>{el.id}</span>
-                <span>{el.title}</span>
-                <span><del>{el.price}</del></span>
-                <span>{el.discountedPrice}</span>
-                <img src={el.img} alt='image' height={100} width={100} />
-            </div>
-        )
-      })}
-    </div>
-  )
+    <>
+    <button onClick={getPosts}>Get Post</button>
+    <button onClick={createPost}>Create Post</button>
+    <button onClick={updatePost}>Update Post</button>
+    <button onClick={deletePost}>Delete Post</button>
+    </>
+);
 }
 
-export default Products
+export default Products;

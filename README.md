@@ -16,6 +16,12 @@ Hooks - basic functionalities
 React Hooks
 useState - temporary data storage
 useEffect - to handle side effects
+fetchAPI
+CRUD operation
+C - Create - POST
+R - Read - GET
+U - Update - PUT / PATCH
+D - Delete - DELETE 
 
 LifeCycle of a component
 Mounting
