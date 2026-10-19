@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Api } from "../../lib/axios/config";
 
 function Products() {
   const [loading, setLoading] = useState(false);
@@ -19,33 +21,50 @@ function Products() {
     getProducts();
   }, []);
 
-  // async..await
-  // try..catch
+  // axios
   const getProducts = async () => {
     try {
-      setLoading(true);
-      let res = await fetch("https://dummyjson.com/products");
-      let data = await res.json();
-      setProducts(data.products);
-      setLoading(false);
+      const res = await Api.get("https://dummyjson.com/products");
+      setProducts(res.products);
     } catch (error) {
       console.log(error);
     }
   };
+
+  // async..await
+  // try..catch
+  // const getProducts = async () => {
+  //   try {
+  //     setLoading(true);
+  //     let res = await fetch("https://dummyjson.com/products");
+  //     let data = await res.json();
+  //     setProducts(data.products);
+  //     setLoading(false);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const getPosts = () => {
     fetch("https://jsonplaceholder.typicode.com/posts");
   };
 
   const createPost = () => {
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      body: JSON.stringify({
-        title: "foo",
-        body: "bar",
-        userId: 1,
-      }),
+    // axios
+    Api.post("https://jsonplaceholder.typicode.com/posts", {
+      title: "foo",
+      body: "bar",
+      userId: 1,
     });
+    // fetch
+    // fetch("https://jsonplaceholder.typicode.com/posts", {
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     title: "foo",
+    //     body: "bar",
+    //     userId: 1,
+    //   }),
+    // });
   };
 
   const updatePost = () => {
