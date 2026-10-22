@@ -13,6 +13,8 @@ import Cart from "../../modules/cart";
 import DefaultLayout from "../defaultLayout";
 import Blogs from "../../modules/blogs";
 import BlogDetails from "../../modules/blogs/blogDetails";
+import Storage from "../../modules/storage";
+import Register from "../../modules/register";
 
 function Routing() {
   let router = createBrowserRouter([
@@ -27,7 +29,8 @@ function Routing() {
         { path: "/cart", Component: Cart },
         { path: "/blogs", Component: Blogs },
         { path: "/blogs/:slug", Component: BlogDetails },
-
+        { path: "/storage", Component: Storage },
+        { path: '/register', Component: Register }
       ],
     },
     { path: "/blog/blogdetails", Component: Cart },
