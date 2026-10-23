@@ -8,7 +8,7 @@ function App() {
     <>
       {/* <BrowserRouter> */}
       <Routing />
-      <ToastContainer position="bottom-left" theme="dark" />
+      <ToastContainer position="bottom-left" theme="colored" />
       {/* </BrowserRouter> */}
     </>
   );
