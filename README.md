@@ -29,3 +29,11 @@ Updating
 Unmounting
 
 render - to show something on DOM (Document object modal)
+
+?? - null / undefined
+|| - true / false
+
+null - false
+undefined - false
+"" - false
+0 - false

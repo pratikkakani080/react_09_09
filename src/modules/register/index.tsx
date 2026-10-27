@@ -56,7 +56,14 @@ function Register() {
 
   const handleSubmit = () => {
     if (isValidate()) {
-      localStorage.setItem("user", JSON.stringify(userInfo));
+      let storedUsers = JSON.parse(localStorage.getItem('user')) || []
+      
+      // console.log("🚀 ~ handleSubmit ~ :", [...storedUsers, userInfo] )
+      // console.log("🚀 ~ handleSubmit ~ storedUsers:", storedUsers)
+      // console.log("🚀 ~ handleSubmit ~ userInfo:", userInfo)
+
+      storedUsers.push(userInfo)
+      localStorage.setItem("user", JSON.stringify(storedUsers));
       toast.success("User successfully registered!");
       setUserInfo(initialValues);
       navigate("/");

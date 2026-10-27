@@ -15,6 +15,7 @@ import Blogs from "../../modules/blogs";
 import BlogDetails from "../../modules/blogs/blogDetails";
 import Storage from "../../modules/storage";
 import Register from "../../modules/register";
+import Login from "../../modules/login";
 
 function Routing() {
   let router = createBrowserRouter([
@@ -30,7 +31,8 @@ function Routing() {
         { path: "/blogs", Component: Blogs },
         { path: "/blogs/:slug", Component: BlogDetails },
         { path: "/storage", Component: Storage },
-        { path: '/register', Component: Register }
+        { path: "/register", Component: Register },
+        { path: "/login", Component: Login },
       ],
     },
     { path: "/blog/blogdetails", Component: Cart },
